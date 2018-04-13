@@ -1,1 +1,30 @@
-
+L=["Matt","Stephen","Liam"]
+print(L)
+L=["Matt","Stephen","Liam","Maia","Sam"]
+print(L[0])
+print(L[2])
+print(L[3])
+print(L[-1])
+print(L[-4])
+print(L)
+print(L[-2])
+L[1:4]
+print(L)
+L.remove("Liam")
+print(L)
+L[3]="Tina"
+print(L)
+print(bool("Clyde" in L))
+print(bool("Stephen" in L))
+print(len(L))
+L.reverse()
+print(L)
+L.sort()
+print(L)
+L=[3,9,-1,-1,8]
+print(sum(L))
+print(max(L))
+print(min(L))
+print(L.count(-1))
+L.sort()
+print(L)
