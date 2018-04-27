@@ -7,10 +7,11 @@ from datetime import date
 today=date.today()
 
 weekdaynum=today.weekday()
-weekday=["Monday,","Tuesday,","Wednesday,","Thursday,","Friday,","Saturday,","Sunday,"]
-
+day=today.day
 monthnum=today.month
-month=["January","February","March","April"]
+yearnum=today.year
+weekday=["Monday,","Tuesday,","Wednesday,","Thursday,","Friday,","Saturday,","Sunday,"]
+month=["January","February","March","April","May","June","July","August","September","October","November","December"]
 
 
-print("Today is",weekday[weekdaynum],month[monthnum])
+print("Today is",weekday[weekdaynum],month[monthnum-1],day,yearnum)
