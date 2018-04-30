@@ -9,6 +9,8 @@ for item in num:
     if int(item)>=maximum:
         maximum=int(item)
 print("Max =",maximum)
-minumum=maximum
+minimum=maximum
 for item in num:
+    if int(item)<=minimum:
+        
 print(minimum)
