@@ -8,12 +8,12 @@ from random import randint
 ants=50
 width=900
 height=400
-
+#move each ant randomly up/down + left/right
 def step():
     for ant in data["antList"]:
         ant.x+=randint(-4,3)
         ant.y+=randint(-4,3)
-
+#putting fire ants randomly onn screen
 if __name__=="__main__":
     data={}
     data["antList"]=[]
