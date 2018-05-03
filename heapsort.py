@@ -8,6 +8,7 @@ from time import time
 N = 10 #how many numbers will be sorted
 
 def mySort(A):
+    N=len(A)
     heapify(A,N)
     end=N-1
     while end>0:
