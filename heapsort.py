@@ -14,7 +14,7 @@ def mySort(A):
     while end>0:
         numbers[-1],numbers[0]=numbers[0],numbers[-1]
         end-=1
-        siftUp(a,0,end)
+        siftUp(A,0,end)
         
 def heapify(A,N):
     end=1
@@ -22,7 +22,7 @@ def heapify(A,N):
         siftUp(A,0,end)
         end+=1
 
-def siftUp(a,start,end):
+def siftUp(A,start,end):
     child=end
     while child>start:
         parent=iParent(child)
