@@ -8,8 +8,12 @@ from time import time
 N = 10 #how many numbers will be sorted
 
 def mySort(A):
-    heapify(A)
-    while numbers[-1]>0:
+    heapify(A,N)
+    end=N-1
+    while end>0:
+        numbers[-1],numbers[0]=numbers[0],numbers[-1]
+        end-=1
+        siftUp(a,0,end)
         
 def heapify(A,N):
     end=1
@@ -28,8 +32,7 @@ def siftUp(a,start,end):
             return
 
 def iParent(i):
-    
-
+    ((i-1)//2)
 
 
 
