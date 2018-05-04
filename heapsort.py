@@ -5,7 +5,7 @@
 from random import randint
 from time import time
 
-N = 100 #how many numbers will be sorted
+N = 1000 #how many numbers will be sorted
 
 def mySort(A,count):
     heapify(A,count)
