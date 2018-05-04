@@ -5,47 +5,43 @@
 from random import randint
 from time import time
 
-N = 10 #how many numbers will be sorted
+N = 100 #how many numbers will be sorted
 
-def mySort(A):
-    N=len(A)
-    heapify(A,N)
-    end=N-1
+def mySort(A,count):
+    heapify(A,count)
+    end=count-1
     while end>0:
-        numbers[-1],numbers[0]=numbers[0],numbers[-1]
+        numbers[end],numbers[0]=numbers[0],numbers[end]
         end-=1
         siftDown(A,0,end)
+    return A
 
+def heapify(A,count):
+    start=iParent(count-1)
+    while start>=0:
+        siftDown(A,start,count-1)
+        start-=1
 
-
-
-def heapify(A,N):
-    end=1
-    while end<N:
-        siftUp(A,0,end)
-        end+=1
-
-
-
-
-
-
-
-
-
-def siftUp(A,start,end):
-    child=end
-    while child>start:
-        parent=iParent(child)
-        if numbers[parent]<numbers[child]:
-            numbers[parent],numbers[child]=numbers[child],numbers[parent]
-            child=parent
-        else:
+def siftDown(A,start,end):
+    root=start
+    while iLeftChild(root)<=end:
+        child=iLeftChild(root)
+        swap=root
+        if A[swap]<A[child]:
+            swap=child
+        if (child+1)<=end and A[swap]<A[child+1]:
+            swap=(child+1)
+        if swap==root:
             return
+        else:
+            A[root],A[swap]=A[swap],A[root]
+            root=swap
 
 def iParent(i):
     return ((i-1)//2)
 
+def iLeftChild(i):
+    return ((2*i)+1)
 
 
 if __name__ == '__main__':
@@ -59,7 +55,7 @@ if __name__ == '__main__':
     
     #time how long your sort takes
     t1 = time()
-    numbers = mySort(numbers)
+    numbers = mySort(numbers,N)
     t2 = time()
     
     #print whether the sort worked or not
