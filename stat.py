@@ -3,38 +3,29 @@
 #stat.py - takes list, prints min, max, median, mode, mean
 
 
-num=input("Enter a list of numbers: ").split(" ")#makes list of numbers
+num=input("Enter a list of numbers: ").split(" ").sort()#makes list of numbers and sorts it from smallest to largest
 
-#max
-maximum=0
-for item in num:#runs through each number and makes maximum the largest number
-    if int(item)>=maximum:
-        maximum=int(item)
-print("Max =",maximum)
+#Max
+print("Max =",num[-1])#since the list is sorted by number size, this prints the last number, which is the max
 
-#min
-minimum=maximum
-for item in num:#runs through each number in the list, and makes minumum the smallest number
-    if int(item)<=minimum:
-        minimum=int(item)
-print("Min =",minimum)
+#Min
+print("Min =",num[0])#since the list is sorted by number size, this prints the first number, which is the min
 
-#mean
+#Mean
 sum=0
 for item in num:#adds all the numbers in the list together
     sum+=int(item)
-print("Mean =",sum/len(num))#divides sum by the length of the list to find average
+print("Mean =",sum/len(num))#divides the sum by the amount of numbers in the list to find average
 
-#median
-num=num.sort()#orders numbers
-if len(num)%2==0:
-    print("Median =",(int(num[((len(num)/2)-1)])+int(num[((len(num)/2))]))/2)
-else:
-    print("Median =",num[((len(num)/2)-.5)])
+#Median
+if len(num)%2==0:#if even amount of numbers in the list
+    print("Median =",(int(num[((len(num)/2)-1)])+int(num[((len(num)/2))]))/2)#prints two middle numbers as median
+else:#if odd amount of numbers in the list
+    print("Median =",num[((len(num)/2)-.5)])#prints middle number as median
 
-#mode
+#Mode
 times=0
-for item in num:
-    if num.count(item)>=times:
+for item in num:#runs through each number to see how many times it shows up in the list
+    if num.count(item)>=times:#number that appears in the list the most will end up as variable times
         times=int(item)
 print("Mode =",times)
