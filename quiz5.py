@@ -13,7 +13,7 @@ def plusEquals(list2,integer):
 
 def smallest(list3):
     list3=list3.sort()
-    return list3[0]
+    return smallest
 
 def decimalRange(num1,num2,num3):
     list4=[]
